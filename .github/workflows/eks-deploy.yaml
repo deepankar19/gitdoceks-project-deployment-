@@ -41,40 +41,40 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-  deploy:
-    name: Deploy to EKS
-    runs-on: ubuntu-latest
-    needs: build-and-push
+  # deploy:
+  #   name: Deploy to EKS
+  #   runs-on: ubuntu-latest
+  #   needs: build-and-push
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
 
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+  #     - name: Configure AWS credentials
+  #       uses: aws-actions/configure-aws-credentials@v4
+  #       with:
+  #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  #         aws-region: ${{ env.AWS_REGION }}
 
-      - name: Update Kubeconfig
-        run: aws eks update-kubeconfig --name ${{ env.EKS_CLUSTER_NAME }} --region ${{ env.AWS_REGION }}
+  #     - name: Update Kubeconfig
+  #       run: aws eks update-kubeconfig --name ${{ env.EKS_CLUSTER_NAME }} --region ${{ env.AWS_REGION }}
 
-      - name: Create Namespace if not exists
-        run: |
-          kubectl get namespace learnhub || kubectl create namespace learnhub
+  #     - name: Create Namespace if not exists
+  #       run: |
+  #         kubectl get namespace learnhub || kubectl create namespace learnhub
 
-      - name: Update Image in Deployment Manifest
-        run: |
-          sed -i "s|image: .*|image: ${{ env.DOCKER_IMAGE }}:${{ env.IMAGE_TAG }}|g" eks-manifests/deployment.yaml
+  #     - name: Update Image in Deployment Manifest
+  #       run: |
+  #         sed -i "s|image: .*|image: ${{ env.DOCKER_IMAGE }}:${{ env.IMAGE_TAG }}|g" eks-manifests/deployment.yaml
           
-      - name: Deploy to EKS
-        run: |
-          kubectl apply -f eks-manifests/deployment.yaml
-          kubectl apply -f eks-manifests/service.yaml
+  #     - name: Deploy to EKS
+  #       run: |
+  #         kubectl apply -f eks-manifests/deployment.yaml
+  #         kubectl apply -f eks-manifests/service.yaml
           
-      - name: Verify Deployment
-        run: |
-          kubectl rollout status deployment/learnhub-deployment -n learnhub --timeout=120s
-          kubectl get pods -n learnhub
-          kubectl get svc -n learnhub
+  #     - name: Verify Deployment
+  #       run: |
+  #         kubectl rollout status deployment/learnhub-deployment -n learnhub --timeout=120s
+  #         kubectl get pods -n learnhub
+  #         kubectl get svc -n learnhub
