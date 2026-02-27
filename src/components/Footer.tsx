@@ -130,7 +130,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             {/* Logo & Copyright */}
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-purple-600 rounded-md flex items-center justify-center">
+              <div className="w-8 h-8 bg-gray-600 rounded-md flex items-center justify-center">
                 <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
                 </svg>

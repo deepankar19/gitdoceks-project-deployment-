@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: learnhub
-          image: manojtech/learnhub:latest
+          image: devilvires/learnhub:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 3000  # change if your app uses different port

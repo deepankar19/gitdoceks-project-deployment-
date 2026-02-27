@@ -36,7 +36,7 @@ export default function CartPage() {
             <p className="text-gray-500 mb-6">Keep shopping to find a course!</p>
             <Link
               href="/courses"
-              className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors"
+              className="inline-flex items-center px-6 py-3 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors"
             >
               Browse Courses
             </Link>
@@ -64,7 +64,7 @@ export default function CartPage() {
                     <div className="flex items-start justify-between gap-4">
                       <div className="min-w-0">
                         <Link href={`/courses/${item.id}`}>
-                          <h3 className="font-semibold text-gray-900 text-sm sm:text-base leading-tight hover:text-purple-600 transition-colors line-clamp-2">
+                          <h3 className="font-semibold text-gray-900 text-sm sm:text-base leading-tight hover:text-gray-600 transition-colors line-clamp-2">
                             {item.title}
                           </h3>
                         </Link>
@@ -98,7 +98,7 @@ export default function CartPage() {
 
                       {/* Price & Remove */}
                       <div className="text-right shrink-0">
-                        <div className="text-lg font-bold text-purple-600">${item.price}</div>
+                        <div className="text-lg font-bold text-gray-600">${item.price}</div>
                         <div className="text-sm text-gray-400 line-through">${item.originalPrice}</div>
                         <button
                           onClick={() => removeItem(item.id)}
@@ -131,11 +131,11 @@ export default function CartPage() {
                   </div>
                   <div className="border-t border-gray-200 pt-3 flex justify-between">
                     <span className="text-base font-bold text-gray-900">Total:</span>
-                    <span className="text-2xl font-bold text-purple-600">${totalPrice.toFixed(2)}</span>
+                    <span className="text-2xl font-bold text-gray-600">${totalPrice.toFixed(2)}</span>
                   </div>
                 </div>
 
-                <button className="w-full py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors mb-3">
+                <button className="w-full py-3 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors mb-3">
                   Checkout
                 </button>
 
@@ -146,7 +146,7 @@ export default function CartPage() {
                     <input
                       type="text"
                       placeholder="Enter coupon code"
-                      className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+                      className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-500"
                     />
                     <button className="px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-lg hover:bg-gray-800 transition-colors">
                       Apply

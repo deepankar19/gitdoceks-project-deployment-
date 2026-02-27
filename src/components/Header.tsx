@@ -13,13 +13,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 shrink-0">
-            <div className="w-9 h-9 bg-purple-600 rounded-md flex items-center justify-center">
+            <div className="w-9 h-9 bg-gray-600 rounded-md flex items-center justify-center">
               <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
               </svg>
             </div>
             <span className="text-2xl font-bold text-gray-900 tracking-tight">
-              <span className="text-purple-600">Learn</span>Hub
+              <span className="text-gray-600">Learn</span>Hub
             </span>
           </Link>
 
@@ -31,7 +31,7 @@ export default function Header() {
                 placeholder="Search for anything..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-full bg-gray-50 text-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-full bg-gray-50 text-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent transition-all"
               />
               <svg
                 className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
@@ -53,19 +53,19 @@ export default function Header() {
           <nav className="hidden md:flex items-center gap-1">
             <Link
               href="/courses"
-              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-md hover:bg-purple-50 transition-colors"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-600 rounded-md hover:bg-gray-50 transition-colors"
             >
               Courses
             </Link>
             <Link
               href="/about"
-              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-md hover:bg-purple-50 transition-colors"
+              className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-600 rounded-md hover:bg-gray-50 transition-colors"
             >
               About
             </Link>
             <Link
               href="/cart"
-              className="relative ml-2 p-2 text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-full transition-colors"
+              className="relative ml-2 p-2 text-gray-700 hover:text-gray-600 hover:bg-gray-50 rounded-full transition-colors"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
@@ -75,15 +75,15 @@ export default function Header() {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"
                 />
               </svg>
-              <span className="absolute -top-0.5 -right-0.5 bg-purple-600 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
+              <span className="absolute -top-0.5 -right-0.5 bg-gray-600 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center">
                 3
               </span>
             </Link>
             <div className="ml-3 flex items-center gap-2">
-              <button className="px-4 py-2 text-sm font-medium text-purple-600 border border-purple-600 rounded-md hover:bg-purple-50 transition-colors">
+              <button className="px-4 py-2 text-sm font-medium text-gray-600 border border-gray-600 rounded-md hover:bg-gray-50 transition-colors">
                 Log in
               </button>
-              <button className="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700 transition-colors">
+              <button className="px-4 py-2 text-sm font-medium text-white bg-gray-600 rounded-md hover:bg-gray-700 transition-colors">
                 Sign up
               </button>
             </div>
@@ -112,36 +112,36 @@ export default function Header() {
             <input
               type="text"
               placeholder="Search for anything..."
-              className="w-full pl-4 pr-4 py-2.5 border border-gray-300 rounded-full bg-gray-50 text-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              className="w-full pl-4 pr-4 py-2.5 border border-gray-300 rounded-full bg-gray-50 text-sm text-gray-800 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500"
             />
           </div>
           <nav className="px-4 pb-4 space-y-1">
             <Link
               href="/courses"
-              className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md"
+              className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-600 hover:bg-gray-50 rounded-md"
               onClick={() => setMenuOpen(false)}
             >
               Courses
             </Link>
             <Link
               href="/about"
-              className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md"
+              className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-600 hover:bg-gray-50 rounded-md"
               onClick={() => setMenuOpen(false)}
             >
               About
             </Link>
             <Link
               href="/cart"
-              className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 hover:bg-purple-50 rounded-md"
+              className="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-gray-600 hover:bg-gray-50 rounded-md"
               onClick={() => setMenuOpen(false)}
             >
               Cart
             </Link>
             <div className="pt-3 flex gap-2">
-              <button className="flex-1 px-4 py-2 text-sm font-medium text-purple-600 border border-purple-600 rounded-md">
+              <button className="flex-1 px-4 py-2 text-sm font-medium text-gray-600 border border-gray-600 rounded-md">
                 Log in
               </button>
-              <button className="flex-1 px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-md">
+              <button className="flex-1 px-4 py-2 text-sm font-medium text-white bg-gray-600 rounded-md">
                 Sign up
               </button>
             </div>

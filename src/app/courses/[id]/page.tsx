@@ -71,7 +71,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
                       </svg>
                     ))}
                   </div>
-                  <span className="text-purple-300 text-sm underline">
+                  <span className="text-gray-300 text-sm underline">
                     ({course.reviews.toLocaleString()} ratings)
                   </span>
                 </div>
@@ -85,7 +85,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
-                  Created by <span className="text-purple-300 underline">{course.instructor}</span>
+                  Created by <span className="text-gray-300 underline">{course.instructor}</span>
                 </div>
                 <div className="flex items-center gap-1">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -118,7 +118,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
                       {Math.round((1 - course.price / course.originalPrice) * 100)}% off
                     </span>
                   </div>
-                  <button className="w-full py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors mb-3">
+                  <button className="w-full py-3 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors mb-3">
                     Add to Cart
                   </button>
                   <button className="w-full py-3 border border-gray-300 text-gray-800 font-semibold rounded-lg hover:bg-gray-50 transition-colors mb-4">
@@ -175,7 +175,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {course.whatYouWillLearn.map((item, index) => (
                 <div key={index} className="flex items-start gap-2">
-                  <svg className="w-5 h-5 text-purple-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-gray-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                   <span className="text-sm text-gray-700">{item}</span>
@@ -236,13 +236,13 @@ export default async function CourseDetailPage({ params }: PageProps) {
           <div className="bg-white rounded-xl border border-gray-200 p-6 mb-8">
             <h2 className="text-xl font-bold text-gray-900 mb-4">Instructor</h2>
             <div className="flex items-start gap-4">
-              <div className="w-16 h-16 bg-purple-200 rounded-full flex items-center justify-center shrink-0">
-                <span className="text-2xl font-bold text-purple-700">
+              <div className="w-16 h-16 bg-gray-200 rounded-full flex items-center justify-center shrink-0">
+                <span className="text-2xl font-bold text-gray-700">
                   {course.instructor.charAt(0)}
                 </span>
               </div>
               <div>
-                <h3 className="font-semibold text-purple-600 text-lg">{course.instructor}</h3>
+                <h3 className="font-semibold text-gray-600 text-lg">{course.instructor}</h3>
                 <p className="text-sm text-gray-500 mb-2">Expert Instructor</p>
                 <div className="flex items-center gap-4 text-sm text-gray-600 mb-3">
                   <span className="flex items-center gap-1">

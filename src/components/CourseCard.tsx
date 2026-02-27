@@ -40,7 +40,7 @@ export default function CourseCard({ course }: { course: Course }) {
 
         {/* Content */}
         <div className="p-4">
-          <h3 className="font-bold text-gray-900 text-sm leading-tight line-clamp-2 mb-1 group-hover:text-purple-600 transition-colors">
+          <h3 className="font-bold text-gray-900 text-sm leading-tight line-clamp-2 mb-1 group-hover:text-gray-600 transition-colors">
             {course.title}
           </h3>
           <p className="text-xs text-gray-500 mb-2">{course.instructor}</p>
