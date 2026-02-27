@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: learnhub-deployment
+  namespace: learnhub
+  labels:
+    app: learnhub
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: learnhub
+  template:
+    metadata:
+      labels:
+        app: learnhub
+    spec:
+      containers:
+        - name: learnhub
+          image: manojtech/learnhub:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000  # change if your app uses different port
